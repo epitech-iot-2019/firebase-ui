@@ -8,10 +8,8 @@ import { Observable} from 'rxjs';
 })
 export class AppComponent {
   title = 'testApp';
-  db:any;
   isOn:number;
-  constructor(db: AngularFireDatabase) {
-    this.db = db;
+  constructor(private db: AngularFireDatabase) {
     const itemObservable: Observable<any> = db.object('Led/status').valueChanges()
     itemObservable.subscribe(data => this.isOn = data )
    }
