@@ -1,6 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  {{isOn}}
+  {{isOn1}}
 </div>
 
+<div style="text-align:center">
+  {{isOn2}}
+</div>
 
+<div>
+  <button (click)="switchLight()">Switch integrated light</button>
+</div>
+
+<div>
+  <button (click)="switchHomeLight()">Switch home light</button>
+</div>
+
+<label for="delay">Delay</label>
+<input [(ngModel)]="delay" (ngModelChange)="setDelay()" id="delay" type="number" />
